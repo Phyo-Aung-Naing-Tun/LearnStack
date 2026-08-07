@@ -20,6 +20,15 @@ body {
   @apply scroll-mt-20;
 }
 
+/* Remove underline from heading anchor links */
+.prose h1 a,
+.prose h2 a,
+.prose h3 a,
+.prose h4 a {
+  @apply no-underline hover:no-underline;
+  text-decoration: none !important;
+}
+
 .prose pre {
   @apply rounded-lg border border-slate-200 dark:border-slate-700;
 }
