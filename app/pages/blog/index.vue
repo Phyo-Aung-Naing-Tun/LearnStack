@@ -53,12 +53,18 @@ useSeoMeta({
 const { data: posts } = await useAsyncData(
   'blog-list',
   async () => {
-    const items = await queryCollection('content')
-      .where('path', 'LIKE', '/blog/%')
-      .all()
-    return (items || [])
-      .filter((d: any) => d.path !== '/blog')
-      .sort((a: any, b: any) => new Date(b.date || 0).getTime() - new Date(a.date || 0).getTime())
+    try {
+      const items = await queryCollection('content').all()
+      return (items || [])
+        .filter((d: any) => d.path?.startsWith('/blog/'))
+        .sort((a: any, b: any) => {
+          const da = a.date ? new Date(a.date).getTime() : 0
+          const db = b.date ? new Date(b.date).getTime() : 0
+          return db - da
+        })
+    } catch {
+      return []
+    }
   }
 )
 

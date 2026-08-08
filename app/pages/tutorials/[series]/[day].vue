@@ -73,10 +73,14 @@ const { data: seriesData } = await useAsyncData(
 const { data: allDays } = await useAsyncData(
   `series-days-${series}`,
   async () => {
-    const items = await queryCollection('content')
-      .where('path', 'LIKE', `${seriesPath}/%`)
-      .all()
-    return (items || []).filter((d: any) => d.day).sort((a: any, b: any) => a.day - b.day)
+    try {
+      const items = await queryCollection('content').all()
+      return (items || [])
+        .filter((d: any) => d.path?.startsWith(`${seriesPath}/`) && d.day)
+        .sort((a: any, b: any) => (a.day || 0) - (b.day || 0))
+    } catch {
+      return []
+    }
   }
 )
 

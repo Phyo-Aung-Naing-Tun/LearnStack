@@ -49,11 +49,12 @@ useSeoMeta({
 const { data: tutorials } = await useAsyncData(
   'tutorials-list',
   async () => {
-    const items = await queryCollection('content')
-      .where('path', 'LIKE', '/tutorials/%')
-      .all()
-    // Filter to only directory indexes (files without a day field)
-    return (items || []).filter((d: any) => !d.day)
+    try {
+      const items = await queryCollection('content').all()
+      return (items || []).filter((d: any) => d.path?.startsWith('/tutorials/') && !d.day)
+    } catch {
+      return []
+    }
   }
 )
 </script>
