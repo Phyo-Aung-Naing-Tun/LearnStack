@@ -20,17 +20,6 @@ export default defineNuxtConfig({
   },
 
   content: {
-    experimental: {
-      /**
-       * Use Node's built-in node:sqlite module (available since Node.js v22.5.0)
-       * instead of better-sqlite3. This avoids binary restore failures on
-       * Vercel serverless cold starts that cause queryCollection() to silently
-       * return null / "no such table: _content_pages" errors.
-       *
-       * @see https://content.nuxt.com/docs/getting-started/configuration#experimental
-       */
-      sqliteConnector: 'native',
-    },
     highlight: {
       theme: {
         default: 'github-light',
