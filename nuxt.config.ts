@@ -10,7 +10,7 @@ export default defineNuxtConfig({
   ],
 
   nitro: {
-    preset: 'vercel'
+    preset: 'static'
   },
 
   colorMode: {
@@ -31,10 +31,7 @@ export default defineNuxtConfig({
       toc: { depth: 3, searchDepth: 3 },
     },
 
-    database: {
-      type: 'sqlite',
-      filename: ':memory:' // Vercel ရဲ့ read-only serverless မှာ အဆင်ပြေအောင် in-memory သုံးတာပါ
-    }
+
   },
 
   css: ['~/assets/css/main.css'],
