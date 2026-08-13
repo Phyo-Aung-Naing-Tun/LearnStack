@@ -9,6 +9,10 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
   ],
 
+  nitro: {
+    preset: 'vercel'
+  },
+
   colorMode: {
     classSuffix: '',
     preference: 'system',
@@ -22,9 +26,15 @@ export default defineNuxtConfig({
         dark: 'github-dark',
       },
     },
+    
     markdown: {
       toc: { depth: 3, searchDepth: 3 },
     },
+
+    database: {
+      type: 'sqlite',
+      filename: ':memory:' // Vercel ရဲ့ read-only serverless မှာ အဆင်ပြေအောင် in-memory သုံးတာပါ
+    }
   },
 
   css: ['~/assets/css/main.css'],
