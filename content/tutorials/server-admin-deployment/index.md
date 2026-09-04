@@ -4,7 +4,7 @@ description: "JS, PHP, Laravel, Vue, Nuxt developer တွေ ကိုယ်ပ
 series: "server-admin-deployment"
 seriesTitle: "Server Admin & Deployment"
 seriesDescription: "VPS ပေါ်မှာ web app တွေ လုံခြုံစွာ deploy လုပ်နည်း"
-dayCount: 15
+dayCount: 21
 ---
 
 # Web Developer အတွက် Server Administration & Secure Deployment Course
