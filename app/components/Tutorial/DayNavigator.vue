@@ -1,6 +1,7 @@
 <template>
+  <!-- Desktop only: inline prev/next + mark complete (footer bar covers mobile) -->
   <nav
-    class="flex items-center justify-between gap-4 py-6 border-t border-slate-200 dark:border-slate-700 mt-8"
+    class="hidden lg:flex items-center justify-between gap-4 py-6 border-t border-slate-200 dark:border-slate-700 mt-8"
     aria-label="Day navigation"
   >
     <NuxtLink

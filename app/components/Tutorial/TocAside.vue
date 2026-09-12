@@ -1,6 +1,7 @@
 <template>
-  <aside class="toc-sidebar hidden lg:block w-[220px] shrink-0">
-    <nav class="sticky top-20">
+  <!-- TOC sidebar — hidden on mobile, scrollable on desktop -->
+  <aside class="toc-sidebar hidden lg:block w-[220px] shrink-0 overflow-y-auto py-6">
+    <nav>
       <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3">
         On This Page
       </h4>

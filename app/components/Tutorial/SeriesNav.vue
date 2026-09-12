@@ -1,7 +1,7 @@
 <template>
-  <!-- Desktop: Fixed left sidebar -->
-  <aside class="series-nav-desktop hidden lg:flex lg:flex-col w-[250px] shrink-0">
-    <nav class="sticky top-20">
+  <!-- Desktop: left sidebar — hidden on mobile, scrollable on desktop -->
+  <aside class="series-nav-desktop hidden lg:flex lg:flex-col w-[250px] shrink-0 overflow-y-auto py-6">
+    <nav>
       <!-- Series Title -->
       <h3 class="text-sm font-bold text-slate-800 dark:text-slate-100 mb-1">
         {{ seriesTitle }}
