@@ -10,6 +10,7 @@
         <NuxtLink to="/" class="hover:text-accent transition-colors">Home</NuxtLink>
         <NuxtLink to="/blog" class="hover:text-accent transition-colors">Blog</NuxtLink>
         <NuxtLink to="/tutorials" class="hover:text-accent transition-colors">Tutorials</NuxtLink>
+        <NuxtLink to="/books" class="hover:text-accent transition-colors">Books</NuxtLink>
       </nav>
 
       <div class="flex items-center gap-3">
